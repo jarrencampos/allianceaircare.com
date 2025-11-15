@@ -2391,14 +2391,14 @@ figure img {
 }
 
 .thumb-creative__image {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	min-width: 101%;
-	min-height: 100%;
-	max-width: none;
-	width: auto;
+	position: static;
+	transform: none;
+	min-width: auto;
+	min-height: auto;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
 }
 
 .thumb-creative__front,
@@ -2595,6 +2595,46 @@ figure img {
 	.thumb-creative .thumb-creative__content {
 		min-height: 360px;
 	}
+}
+
+@media (max-width: 767px) {
+  /* Hide the content block on mobile */
+  .thumb-creative__content {
+    display: none !important;
+  }
+
+  /* Make the container show only the front image */
+  .thumb-creative__back {
+    display: none !important;
+  }
+
+  .thumb-creative__front {
+    display: block !important;
+  }
+
+  /* Ensure the image wraps in a square shape */
+  .thumb-creative__image-wrap {
+    padding-bottom: 100%; /* Keeps aspect ratio square */
+    position: relative;
+    height: 0;
+  }
+
+  .thumb-creative__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  /* Also reset any 3D/transform effects that may interfere */
+  .thumb-creative__inner,
+  .thumb-creative {
+    transform: none !important;
+    perspective: none !important;
+  }
 }
 
 .thumbnail-classic {
