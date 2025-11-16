@@ -8211,6 +8211,37 @@ h4 + .owl-carousel {
 	color: #333;
 }
 
+.top-banner-full {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* Break out of parent padding */
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.top-banner-full a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Default: show desktop logo, hide mobile */
+.logo-mobile {
+  display: none;
+}
+
+/* Mobile: hide desktop logo, show mobile logo */
+@media (max-width: 992px) {
+  .logo-desktop {
+    display: none;
+  }
+  .logo-mobile {
+    display: inline;
+  }
+}
+
+
 .rd-navbar-fullwidth .rd-navbar-nav > .rd-navbar-submenu .rd-navbar-dropdown,
 .rd-navbar-fullwidth .rd-navbar-nav > .rd-navbar-submenu .rd-navbar-megamenu,
 .rd-navbar-static .rd-navbar-nav > .rd-navbar-submenu .rd-navbar-dropdown,
@@ -8646,6 +8677,7 @@ h4 + .owl-carousel {
 .rd-navbar-sidebar .rd-navbar-top-panel-dark .rd-navbar-items-list > li + li::before {
 	background: #888;
 }
+
 
 .ie-10 .rd-navbar-static .rd-navbar-top-panel__content > *,
 .ie-11 .rd-navbar-static .rd-navbar-top-panel__content > *, .ie-10
