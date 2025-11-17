@@ -95,21 +95,27 @@
             <div class="col-md-7 col-lg-8">
               <h4 class="heading-decorated">Get in Touch</h4>
               <!-- RD Mailform-->
-              <form class="rd-mailform rd-mailform_style-1" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                <div class="form-wrap form-wrap_icon linear-icon-man">
-                  <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                  <label class="form-label" for="contact-name">Your name</label>
-                </div>
-                <div class="form-wrap form-wrap_icon linear-icon-envelope">
-                  <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
-                  <label class="form-label" for="contact-email">Your e-mail</label>
-                </div>
-                <div class="form-wrap form-wrap_icon linear-icon-feather">
-                  <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
-                  <label class="form-label" for="contact-message">Your message</label>
-                </div>
-                <button class="button button-primary" type="submit">send</button>
-              </form>
+<form class="rd-mailform rd-mailform_style-1" action="send-mail.php" method="POST">
+  <div id="form-success" style="display:none;" class="alert alert-success">
+  Your message has been sent successfully!
+</div>
+  <div class="form-wrap">
+    <input class="form-input" id="contact-name" type="text" name="name" required>
+    <label class="form-label" for="contact-name">Your name</label>
+  </div>
+
+  <div class="form-wrap">
+    <input class="form-input" id="contact-email" type="email" name="email" required>
+    <label class="form-label" for="contact-email">Your e-mail</label>
+  </div>
+
+  <div class="form-wrap">
+    <textarea class="form-input" id="contact-message" name="message" required></textarea>
+    <label class="form-label" for="contact-message">Your message</label>
+  </div>
+
+  <button class="button button-primary" type="submit">Send</button>
+</form>
             </div>
           </div>
         </div>
@@ -159,5 +165,27 @@
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+document.querySelector('.rd-mailform').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = this;
+
+    // Send the form using AJAX instead of reloading the page
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form)
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('form-success').style.display = 'block';
+        form.reset();
+    })
+    .catch(error => {
+        alert("There was an error sending your message. Please try again.");
+    });
+});
+</script>
+
   </body>
 </html>
