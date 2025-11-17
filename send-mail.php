@@ -25,7 +25,7 @@ $body .= "Message:\n$message\n";
 // ********************************
 
 // MUST be an email at your own domain
-$fromAddress = "no-reply@allianceaircare.com;
+$fromAddress = "hello@allianceaircare.com;
 
 $headers  = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/plain; charset=utf-8\r\n";
