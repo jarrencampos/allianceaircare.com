@@ -25,7 +25,7 @@ $body .= "Email: $email\n";
 $body .= "Phone: $phone\n";
 $body .= "Zip Code: $zipcode\n";
 $body .= "Service Requested: $service\n\n";
-$body .= "Message:\n$message\n";
+$body .= "Message:\n$message\n\n Built by JC Tech Strategies";
 
 // ********************************
 // HostGator-safe email headers
