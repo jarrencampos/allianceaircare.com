@@ -325,18 +325,51 @@
             <div class="row justify-content-end">
               <div class="col-lg-5"> 
                 <h4 class="heading-decorated">Get a Quote</h4>
-                <!-- RD Mailform-->
+              <!-- RD Mailform-->
 <form class="rd-mailform rd-mailform_style-1" action="send-mail.php" method="POST">
+
+  <div id="form-success" style="display:none;" class="alert alert-success">
+    Your message has been sent successfully!
+  </div>
+
+  <!-- NAME -->
   <div class="form-wrap">
     <input class="form-input" id="contact-name" type="text" name="name" required>
     <label class="form-label" for="contact-name">Your name</label>
   </div>
 
+  <!-- EMAIL -->
   <div class="form-wrap">
     <input class="form-input" id="contact-email" type="email" name="email" required>
     <label class="form-label" for="contact-email">Your e-mail</label>
   </div>
 
+  <!-- PHONE NUMBER -->
+  <div class="form-wrap">
+    <input class="form-input" id="contact-phone" type="tel" name="phone" required>
+    <label class="form-label" for="contact-phone">Your phone number</label>
+  </div>
+
+  <!-- ZIPCODE -->
+  <div class="form-wrap">
+    <input class="form-input" id="contact-zipcode" type="text" name="zipcode" pattern="\d{5}" maxlength="5" required>
+    <label class="form-label" for="contact-zipcode">Zip code</label>
+  </div>
+
+  <!-- SERVICE DROPDOWN -->
+  <div class="form-wrap">
+    <select class="form-input" id="contact-service" name="service" required>
+      <option value="" disabled selected>Select a service</option>
+      <option value="installation">Installation</option>
+      <option value="maintenance">Maintenance</option>
+      <option value="repairs">Repairs</option>
+      <option value="diagnostic">Diagnostic / System Check</option>
+      <option value="other">Other</option>
+    </select>
+    <label class="form-label" for="contact-service">Service Needed</label>
+  </div>
+
+  <!-- MESSAGE -->
   <div class="form-wrap">
     <textarea class="form-input" id="contact-message" name="message" required></textarea>
     <label class="form-label" for="contact-message">Your message</label>
