@@ -2,8 +2,8 @@
 // *********************
 // CONTACT FORM SETTINGS
 // *********************
-$to = "jarren@jctechstrategies.com";   // Destination email
-$subject = "New Contact Form Submission";
+$to = "jarren@jctechstrategies.com, allianceaircare@gmail.com";   // Destination email
+$subject = "! New Form Submission !";
 
 // Get submitted form fields (sanitized)
 $name     = htmlspecialchars(trim($_POST['name'] ?? ''));
