@@ -17992,3 +17992,30 @@ h3 + .card-custom-group-wrap {
 .parallax-light p {
 	color: #fff;
 }
+
+/* Mobile-first (mobile logo visible) */
+.logo-desktop {
+  display: none;
+}
+
+.logo-mobile-text {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #000; /* change if your header has a dark background */
+  padding: 8px 0; /* optional - adds vertical breathing room */
+}
+
+/* Desktop: hide text, show image logo */
+@media (min-width: 768px) {
+  .logo-desktop {
+    display: inline-block;
+  }
+  .logo-mobile-text {
+    display: none;
+  }
+}
