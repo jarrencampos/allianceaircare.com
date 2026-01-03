@@ -1,0 +1,16 @@
+# Allow all search engines to crawl the main site
+User-agent: *
+Disallow:
+
+# Sitemap location for faster indexing
+Sitemap: https://allianceaircare.com/sitemap.xml
+
+# Optional: Block test or private folders (uncomment if needed)
+# Disallow: /test/
+# Disallow: /staging/
+# Disallow: /private/
+
+# Notes:
+# - All main pages (home, services, projects, about, contact) are crawlable
+# - Phone click tracking and GA4 tags are unaffected
+# - Keeps search engines focused on valuable content
