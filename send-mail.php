@@ -2,7 +2,7 @@
 // *********************
 // CONTACT FORM SETTINGS
 // *********************
-$to = "jarren@jctechstrategies.com, allianceaircare@gmail.com";   // Destination email
+$to = "jarren@goldmarkdigital.com, allianceaircare@gmail.com";   // Destination email
 $subject = "! New Form Submission !";
 
 // Get submitted form fields (sanitized)
