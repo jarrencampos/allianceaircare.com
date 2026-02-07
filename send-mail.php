@@ -2,8 +2,18 @@
 // *********************
 // CONTACT FORM SETTINGS
 // *********************
-$to = "jarren@goldmarkdigital.com, allianceaircare@gmail.com";   // Destination email
-$subject = "! New Form Submission !";
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'phpmailer/Exception.php';
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/SMTP.php';
+
+// Gmail SMTP settings
+$gmailUser = 'jarren.campos.dev@gmail.com';
+$gmailAppPassword = 'dwkl vdni cwvc xdjk'; // Replace with App Password from Google Account
 
 // Get submitted form fields (sanitized)
 $name     = htmlspecialchars(trim($_POST['name'] ?? ''));
@@ -27,26 +37,33 @@ $body .= "Zip Code: $zipcode\n";
 $body .= "Service Requested: $service\n\n";
 $body .= "Message:\n$message\n\n Built by JC Tech Strategies";
 
-// ********************************
-// HostGator-safe email headers
-// ********************************
+// Send email using PHPMailer with Gmail SMTP
+$mail = new PHPMailer(true);
 
-// MUST be an email at your domain
-$fromAddress = "no-reply@allianceaircare.com";
+try {
+    // SMTP server settings
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = $gmailUser;
+    $mail->Password = $gmailAppPassword;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
 
-$headers  = "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/plain; charset=utf-8\r\n";
+    // Recipients
+    $mail->setFrom('jarren@goldmarkdigital.com', 'Alliance Air Care Website');
+    $mail->addAddress('jarren@goldmarkdigital.com');
+    $mail->addAddress('allianceaircare@gmail.com');
+    $mail->addReplyTo($email, $name);
 
-// Required by HostGator
-$headers .= "From: Website Contact Form <{$fromAddress}>\r\n";
+    // Content
+    $mail->isHTML(false);
+    $mail->Subject = '! New Form Submission !';
+    $mail->Body = $body;
 
-// Allows direct email reply to sender
-$headers .= "Reply-To: {$email}\r\n";
-
-// Try sending the email
-if (mail($to, $subject, $body, $headers)) {
+    $mail->send();
     echo "SUCCESS";
-} else {
-    echo "ERROR: Could not send email.";
+} catch (Exception $e) {
+    echo "ERROR: Could not send email. {$mail->ErrorInfo}";
 }
 ?>
