@@ -146,7 +146,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <dt>Phones</dt>
                     <dd>
                       <ul class="list-semicolon">
-                        <li><a href="tel:5307189271">(530) 718-9271</a></li>
+                        <li><a href="tel:5307189271" onclick="return gtag_report_conversion(this.href);">(530) 718-9271</a></li>
                       </ul>
                     </dd>
                   </dl>
@@ -190,6 +190,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <!-- Global Mailform Output -->
     <div class="snackbars" id="form-output-global"></div>
+    <script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18069143145/bwIVCNrhsK0cEOn8hKhD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
