@@ -192,6 +192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="snackbars" id="form-output-global"></div>
     <script>
 function gtag_report_conversion(url) {
+  gtag('event', 'phone_call_click', { event_category: 'contact', event_label: 'call_us' });
   var callback = function () {
     if (typeof(url) != 'undefined') {
       window.location = url;
@@ -206,6 +207,7 @@ function gtag_report_conversion(url) {
 </script>
     <script>
 function gtag_report_text_conversion(url) {
+  gtag('event', 'text_us_click', { event_category: 'contact', event_label: 'text_us' });
   var callback = function () {
     if (typeof(url) != 'undefined') {
       window.location = url;
