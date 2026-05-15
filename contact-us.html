@@ -349,6 +349,20 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
+    <script>
+function gtag_report_text_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18069143145/AF1RCLOZl60cEOn8hKhD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
@@ -376,7 +390,7 @@ document.querySelector('.rd-mailform').addEventListener('submit', function(e) {
 
     <!-- Sticky Call Bar -->
     <div class="sticky-call-bar">
-      <a href="sms:+15307189271" class="sticky-btn--text">
+      <a href="sms:+15307189271" class="sticky-btn--text" onclick="return gtag_report_text_conversion(this.href);">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
         Text Us
       </a>
