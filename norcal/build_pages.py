@@ -537,7 +537,7 @@ def tech_section(h3, body):
     <div class="tech-text">
       <h3>{h3}</h3>
       <p>{body}</p>
-      <div class="tech-sig">— Alliance Air Care, Northern California</div>
+      <div class="tech-sig">— Cameron Habib, Owner &amp; Operator</div>
     </div>
   </div>
 </section>"""
