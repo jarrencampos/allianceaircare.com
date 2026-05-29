@@ -69,6 +69,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/fonts.css">
+<style>
+/* ALLIANCE NAV OVERRIDE */
+.page-header{padding:0!important;margin:0!important;}
+.rd-navbar-wrap,.rd-navbar-fixed,.rd-navbar-static,.rd-navbar-default{display:none!important;}
+.alliance-nav{background:#000!important;position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:99999!important;border-bottom:1px solid rgba(255,255,255,.08);}
+.alliance-nav-inner{max-width:100%;margin:0;padding:0 24px;display:grid!important;grid-template-columns:1fr auto 1fr;align-items:center;min-height:112px;}
+.alliance-stars{display:flex;flex-direction:column;align-items:center;justify-content:center;justify-self:start;}
+.alliance-stars .stars-row{color:#fff!important;font-size:1.3rem;letter-spacing:3px;line-height:1;font-weight:900;}
+.alliance-stars .stars-label{font-size:.78rem;color:#fff!important;font-weight:700;margin-top:4px;letter-spacing:.04em;}
+.alliance-logo-wrap{display:flex;align-items:center;justify-content:center;}
+.alliance-logo-wrap img{height:80px!important;width:auto!important;max-width:none!important;display:block;}
+.alliance-menu-wrap{display:flex;align-items:center;justify-content:flex-end;position:relative;}
+.alliance-hamburger{background:none!important;border:none;cursor:pointer;padding:8px;display:flex;flex-direction:column;gap:6px;}
+.alliance-hamburger span{display:block!important;width:30px;height:2.5px;background:#fff!important;border-radius:2px;transition:all .25s;}
+.alliance-dropdown{display:none;position:absolute;top:100%;right:0;background:#111;border:1px solid rgba(255,255,255,.1);border-top:none;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:99999;}
+.alliance-dropdown.open{display:block!important;}
+.alliance-dropdown a{display:block;padding:14px 20px;font-size:.88rem;color:#e5e7eb;border-bottom:1px solid rgba(255,255,255,.07);text-decoration:none;transition:background .15s;}
+.alliance-dropdown a:last-child{border-bottom:none;}
+.alliance-dropdown a:hover{background:rgba(255,255,255,.06);color:#fff;}
+.alliance-dropdown .dd-call{color:#60a5fa;font-weight:700;}
+body{padding-top:112px!important;}
+@media(max-width:640px){body{padding-top:76px!important;}.alliance-nav-inner{min-height:76px;padding:0 14px;}.alliance-logo-wrap img{height:54px!important;}.alliance-stars .stars-row{font-size:.95rem;letter-spacing:2px;}.alliance-stars .stars-label{font-size:.62rem;margin-top:2px;}}
+.top-banner-full{display:none!important;}
+.page-header{display:none!important;}
+</style>
 
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
@@ -104,6 +129,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WG429BHX"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ALLIANCE NAV — outside .page so RD navbar JS cannot touch it -->
+    <nav class="alliance-nav">
+      <div class="alliance-nav-inner">
+        <div class="alliance-stars">
+          <div class="stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="stars-label">5.0 Google Reviews</div>
+        </div>
+        <a class="alliance-logo-wrap" href="/">
+          <img src="images/alliancelogo.png" alt="Alliance Air Care" width="80" height="80">
+        </a>
+        <div class="alliance-menu-wrap">
+          <button class="alliance-hamburger" aria-label="Menu" id="allianceNavToggle">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="alliance-dropdown" id="allianceNavDropdown">
+            <a class="dd-call" href="tel:+15307189271">Call (530) 718-9271</a>
+            <a href="sms:+15307189271">Text Us</a>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact-us.html">Contact Us</a>
+            <a href="/norcal/">NorCal Service Area</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <div id="page-loader">
       <div class="cssload-container">
         <div class="cssload-speeding-wheel"></div>
@@ -111,51 +164,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <!-- Page-->
     <div class="page">
-      <header class="page-header">
-        <!-- RD Navbar-->
-         <div class="top-banner-full">
-  <a href="contact-us.html">⭐⭐⭐⭐⭐ 5-Star Rated HVAC Service in Yuba City – Get a Free Quote!</a>
-</div>
-
-        <div class="rd-navbar-wrap">
-          <nav class="rd-navbar rd-navbar-default" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="115px" data-lg-stick-up-offset="35px">
-
-            <div class="rd-navbar-inner rd-navbar-search-wrap">
-              <!-- RD Navbar Panel-->
-              <div class="rd-navbar-panel rd-navbar-search-lg_collapsable">
-                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                <!-- RD Navbar Brand-->
-<div class="rd-navbar-brand">
-  <a class="brand-name" href="index.html">
-    <!-- Desktop logo -->
-    <img class="logo-desktop" src="images/alliancelogodark.png" alt="Alliance Logo" width="151" height="44">
-
-    <!-- Mobile text logo -->
-    <span class="logo-mobile-text">Alliance Air Care</span>
-  </a>
-</div>
-
-              </div>
-              <!-- RD Navbar Nav-->
-              <div class="rd-navbar-nav-wrap rd-navbar-search_not-collapsable">
-                <!-- RD Search-->
-                <div class="rd-navbar-search_collapsable">
-                  <ul class="rd-navbar-nav">
-                    <li class="active"><a href="index.html">Home</a>
-                    </li>
-
-                    <li><a href="services.html">Services</a>
-                    </li>
-                    <li><a href="projects.html">Projects</a>
-                    </li>
-                    <li><a href="contact-us.html">Contact Us</a>
-                    </li>
-                  </ul>
-                </div>
+      <header class="page-header" style="display:none;">
+        <nav class="alliance-nav">
+          <div class="alliance-nav-inner">
+            <div class="alliance-stars">
+              <div class="stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="stars-label">5.0 Google Reviews</div>
+            </div>
+            <a class="alliance-logo-wrap" href="/">
+              <img src="images/alliancelogo.png" alt="Alliance Air Care" width="80" height="80">
+            </a>
+            <div class="alliance-menu-wrap">
+              <button class="alliance-hamburger" aria-label="Menu" id="allianceNavToggle">
+                <span></span><span></span><span></span>
+              </button>
+              <div class="alliance-dropdown" id="allianceNavDropdown">
+                <a class="dd-call" href="tel:+15307189271">&#128222; Call (530) 718-9271</a>
+                <a href="sms:+15307189271">&#128172; Text Us</a>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact-us.html">Contact Us</a>
+                <a href="/norcal/">NorCal Service Area</a>
               </div>
             </div>
-          </nav>
-        </div>
+          </div>
+        </nav>
       </header>
       <!-- Swiper-->
       <section>
@@ -607,5 +641,13 @@ function gtag_report_text_conversion(url) {
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+    (function(){
+      var btn=document.getElementById('allianceNavToggle'),dd=document.getElementById('allianceNavDropdown');
+      if(!btn)return;
+      btn.addEventListener('click',function(e){e.stopPropagation();dd.classList.toggle('open');});
+      document.addEventListener('click',function(){dd.classList.remove('open');});
+    })();
+    </script>
   </body>
 </html>

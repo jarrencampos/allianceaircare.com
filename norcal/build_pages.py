@@ -65,6 +65,7 @@ a { color: inherit; text-decoration: none; }
 .nav-cta { background:var(--blue); color:#fff!important; font-size:.88rem; font-weight:700; padding:10px 20px; border-radius:999px; white-space:nowrap; transition:background .15s; }
 .nav-cta:hover { background:var(--blue-d); }
 @media(max-width:480px){ .nav-cta { font-size:.78rem; padding:8px 14px; } }
+@media(max-width:640px){ body { padding-top: 76px; } .nav-inner { min-height: 76px; padding: 0 14px; } .nav-logo img { height: 54px; } .nav-stars .stars-row { font-size: .95rem; letter-spacing: 2px; } .nav-stars .stars-label { font-size: .62rem; margin-top: 2px; } }
 
 /* HERO */
 .hero {
