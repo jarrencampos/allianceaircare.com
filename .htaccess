@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# 1. Remove .html from URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# 2. Make index.html show as /
+DirectoryIndex index.html
+
+# 3. Redirect /index.html → /
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?]
+RewriteRule ^index\.html$ / [R=301,L]
