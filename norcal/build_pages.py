@@ -533,7 +533,7 @@ def reviews_section():
 def tech_section(h3, body):
     return f"""<section class="tech-section">
   <div class="tech-inner">
-    <img src="/norcal/images/tech-working.jpg" alt="Alliance Air Care technician at work" class="tech-photo">
+    <img src="/norcal/images/cameron-habib.png" alt="Cameron Habib, Owner &amp; Operator — Alliance Air Care" class="tech-photo">
     <div class="tech-text">
       <h3>{h3}</h3>
       <p>{body}</p>
