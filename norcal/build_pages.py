@@ -699,7 +699,7 @@ pages['ac-repair'] = build_page(
     body_sections=[
         hero_section(
             h1='AC Repair in<br>Northern California.<br><span>Same-Day Service.</span>',
-            badges=[('hl','Same-Day Service'),('','All Makes &amp; Models')],
+            badges=[('hl','Fast Service'),('','All Makes &amp; Models')],
             sub='When your AC dies in a Sacramento Valley heat wave, it\'s a health risk — not just an inconvenience. We respond same-day, arrive with a stocked truck, and give you the price before we touch anything.',
             form_id='acForm', form_title='Request AC Repair',
             form_sub='We\'ll call to confirm — usually within the hour.',
