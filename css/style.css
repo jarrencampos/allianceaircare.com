@@ -18046,10 +18046,6 @@ h3 + .card-custom-group-wrap {
   padding: 18px 20px;
   transition: filter 0.15s;
 }
-.sticky-call-bar .sticky-btn--text {
-  background-color: #1a8a3e;
-  border-right: 3px solid rgba(255,255,255,0.5);
-}
 .sticky-call-bar .sticky-btn--call {
   background-color: #4169e1;
 }
