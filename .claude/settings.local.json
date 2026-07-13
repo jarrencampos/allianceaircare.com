@@ -4,7 +4,21 @@
       "Bash(grep:*)",
       "Bash(cat:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(find /Users/jarrencampos/Developer/goldmark/Clients/allianceaircare.com -name *.xml -o -name *.txt -o -name *.conf)",
+      "Bash(wc:*)",
+      "Bash(du:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:comfortablehvacservices.com)",
+      "Bash(git *)",
+      "WebFetch(domain:allianceaircare.com)",
+      "Bash(python3 -)",
+      "Bash(python3 -c ' *)",
+      "Bash(cd *)",
+      "Bash(python3 *)",
+      "Bash(awk -F: '{print $1}')"
     ]
   }
 }
